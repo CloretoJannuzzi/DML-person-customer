@@ -7,8 +7,8 @@ CREATE TABLE pessoa
     id_pessoa INT IDENTITY(1,1) PRIMARY KEY,
     nome VARCHAR(30),
     sobrenome VARCHAR(30),
-    cpf char(11),
-    cep char(11)
+    cpf CHAR(11),
+    cep CHAR(11)
 );
 GO
 CREATE TABLE cliente
