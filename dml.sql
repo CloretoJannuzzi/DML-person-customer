@@ -58,16 +58,13 @@ IF @opcao = 2 AND @cpf IS NOT NULL
     RETURN
 END
 
-IF @opcao = 3 AND @cpf IS NOT NULL
+IF @opcao = 3 AND @cpf IS NOT NULL AND (EXISTS(SELECT * FROM pessoa WHERE cpf = @cpf))
     BEGIN
-    IF (EXISTS(SELECT * FROM pessoa WHERE cpf = @cpf))
-        BEGIN
-            DECLARE @id_pessoa INT
-            SELECT @id_pessoa = [id_pessoa] FROM pessoa
-                WHERE cpf = @cpf
-            DELETE cliente where id_pessoa = @id_pessoa
-            DELETE pessoa where cpf = @cpf
-        END
+        DECLARE @id_pessoa INT
+        SELECT @id_pessoa = [id_pessoa] FROM pessoa
+            WHERE cpf = @cpf
+        DELETE cliente where id_pessoa = @id_pessoa
+        DELETE pessoa where cpf = @cpf
     RETURN
 END
 
