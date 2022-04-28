@@ -8,4 +8,4 @@ _<a href='https://github.com/CloretoJannuzzi/DML-person-customer/blob/main/dml.s
 - A tabela de relação para transformar a pessoa em um cliente consiste em somente(id_cliente(PK identity), id_pessoa(FK unique))
 - Esta procedure eu criei com o objetivo de me auxiliar em um sistema de criação de cliente, atualização de dados do cliente e deletar o cliente.
 
-PS: Não testei mas confio na minha lógica rs(Fiz somente alguns testes isolados das opções) e talvez na 3 eu não precise usar os dois ifs.
+PS: Não testei mas confio na minha lógica rs(Fiz somente alguns testes isolados das opções) o Foco é somente poder consultar depois o que fiz.
