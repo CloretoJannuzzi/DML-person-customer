@@ -77,5 +77,4 @@ IF @opcao = 4
         SELECT * FROM pessoa p INNER JOIN cliente c ON p.id_pessoa = c.id_pessoa
         WHERE (@cpf IS NULL OR cpf = @cpf) 
         AND ((nome = @nome OR @nome IS NULL) AND (@sobrenome IS NULL OR sobrenome = @sobrenome)) 
-    RETURN
 END
