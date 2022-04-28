@@ -58,14 +58,13 @@ IF @opcao = 2 AND @cpf IS NOT NULL
     RETURN
 END
 
-IF @opcao = 3 AND @cpf IS NOT NULL or (@nome IS NOT NULL AND @sobrenome IS NOT NULL)
+IF @opcao = 3 AND @cpf IS NOT NULL
     BEGIN
     IF (EXISTS(SELECT * FROM pessoa WHERE cpf = @cpf))
-    OR (EXISTS(SELECT * FROM pessoa WHERE nome = @nome AND sobrenome = @sobrenome))
         BEGIN
             DECLARE @id_pessoa INT
             SELECT @id_pessoa = [id_pessoa] FROM pessoa
-                WHERE cpf = @cpf OR (nome = @nome AND sobrenome = @sobrenome)
+                WHERE cpf = @cpf
             DELETE cliente where id_pessoa = @id_pessoa
             DELETE pessoa where cpf = @cpf
         END
